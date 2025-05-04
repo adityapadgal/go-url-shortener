@@ -1,8 +1,0 @@
-# Exclude everything unnecessary
-.git
-**/*.go~
-*.log
-*.tmp
-*.DS_Store
-bin/
-dist/
