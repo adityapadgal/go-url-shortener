@@ -1,29 +1,29 @@
-# 🧠 Go URL Shortener with Rate Limiting, Expiry & Analytics
+# Go URL Shortener with Rate Limiting, Expiry & Analytics
 
 A production-ready URL shortener written in Go. Features include:
 
-- ✅ URL shortening with TTL (expiration support)
-- 🔁 Redirect endpoint with expiry validation
-- 📊 Analytics tracking (hit count, timestamps)
-- 🛡️ Per-IP rate limiting (10 req/min default)
-- 🧠 In-memory storage (PostgreSQL/Redis-ready)
-- 🐳 Docker-ready for deployment
-- ⚙️ Modular folder structure
+- URL shortening with TTL (expiration support)
+- Redirect endpoint with expiry validation
+- Analytics tracking (hit count, timestamps)
+- Per-IP rate limiting (10 req/min default)
+- In-memory storage (PostgreSQL/Redis-ready)
+- Docker-ready for deployment
+- Modular folder structure
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 🔧 Prerequisites
+### Prerequisites
 - Go 1.20+
 - (Optional) Docker
 
-### 📦 Install Dependencies
+### Install Dependencies
 ```bash
 go mod tidy
 ```
 
-### ▶️ Run the Server
+### Run the Server
 ```bash
 go run ./cmd/server
 ```
@@ -32,7 +32,7 @@ Server starts on `http://localhost:8000`.
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### POST `/shorten`
 
@@ -78,7 +78,7 @@ Returns analytics for a short URL.
 
 ---
 
-## ⛔ Rate Limiting
+## Rate Limiting
 
 The app enforces per-IP rate limiting:
 - Max 10 requests per minute
@@ -86,7 +86,7 @@ The app enforces per-IP rate limiting:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 go-url-shortener/
@@ -106,7 +106,7 @@ go-url-shortener/
 
 ---
 
-## 🐳 Docker Support (Optional)
+## Docker Support (Optional)
 ```bash
 docker build -t go-url-shortener .
 docker run -p 8000:8000 go-url-shortener
@@ -114,7 +114,7 @@ docker run -p 8000:8000 go-url-shortener
 
 ---
 
-## 📌 Roadmap
+## Roadmap
 
 - [x] In-memory storage
 - [x] Rate limiting
@@ -125,6 +125,6 @@ docker run -p 8000:8000 go-url-shortener
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 Built by [Aditya Padgal](https://github.com/adityapadgal)
