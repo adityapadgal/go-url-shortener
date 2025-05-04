@@ -1,0 +1,24 @@
+# Use official Go image as builder
+FROM golang:1.21 as builder
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy go.mod and go.sum and download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the source code
+COPY . .
+
+# Build the Go app (static binary)
+RUN go build -o url-shortener ./cmd/server
+
+# Final image
+FROM gcr.io/distroless/base-debian11
+
+# Copy the binary from the builder
+COPY --from=builder /app/url-shortener /
+
+# Run the binary
+ENTRYPOINT ["/url-shortener"]
